@@ -1,0 +1,87 @@
+Elasticsearch request body  
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "query_string": {
+          "analyze_wildcard": true,
+          "query": "*"
+        }
+      },
+      "filter": {
+        "bool": {
+          "must": [
+            {
+              "range": {
+                "@timestamp": {
+                  "gte": 1460966405630,
+                  "lte": 1460967305633,
+                  "format": "epoch_millis"
+                }
+              }
+            }
+          ],
+          "must_not": []
+        }
+      }
+    }
+  },
+  "size": 0,
+  "aggs": {
+    "3": {
+      "terms": {
+        "field": "fs.total",
+        "size": 20,
+        "order": {
+          "_count": "desc"
+        }
+      }
+    }
+  }
+}
+
+Elasticsearch response body  
+{
+  "took": 6,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "failed": 0
+  },
+  "hits": {
+    "total": 3423,
+    "max_score": 0,
+    "hits": []
+  },
+  "aggregations": {
+    "3": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": 249199591424,
+          "doc_count": 360
+        },
+        {
+          "key": 1457664,
+          "doc_count": 90
+        },
+        {
+          "key": 3852142592,
+          "doc_count": 90
+        },
+        {
+          "key": 68350373888,
+          "doc_count": 90
+        }
+      ]
+    }
+  }
+}
+
+Statistics:
+Query Duration	6ms
+Request Duration	441ms
+Hits	3423
+Index	"topbeat-*"
