@@ -1,0 +1,152 @@
+Elasticsearch request body  
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "query_string": {
+          "analyze_wildcard": true,
+          "query": "*"
+        }
+      },
+      "filter": {
+        "bool": {
+          "must": [
+            {
+              "range": {
+                "@timestamp": {
+                  "gte": 1460966579415,
+                  "lte": 1460967479415,
+                  "format": "epoch_millis"
+                }
+              }
+            }
+          ],
+          "must_not": []
+        }
+      }
+    }
+  },
+  "size": 0,
+  "aggs": {
+    "3": {
+      "terms": {
+        "field": "fs.used",
+        "size": 20,
+        "order": {
+          "_count": "desc"
+        }
+      }
+    }
+  }
+}
+
+
+Elasticsearch response body  
+{
+  "took": 5,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "failed": 0
+  },
+  "hits": {
+    "total": 3435,
+    "max_score": 0,
+    "hits": []
+  },
+  "aggregations": {
+    "3": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 378,
+      "buckets": [
+        {
+          "key": 512512,
+          "doc_count": 90
+        },
+        {
+          "key": 3852142592,
+          "doc_count": 90
+        },
+        {
+          "key": 242981453824,
+          "doc_count": 4
+        },
+        {
+          "key": 242981539840,
+          "doc_count": 4
+        },
+        {
+          "key": 242981670912,
+          "doc_count": 4
+        },
+        {
+          "key": 242981875712,
+          "doc_count": 4
+        },
+        {
+          "key": 242981961728,
+          "doc_count": 4
+        },
+        {
+          "key": 242982043648,
+          "doc_count": 4
+        },
+        {
+          "key": 242982510592,
+          "doc_count": 4
+        },
+        {
+          "key": 242982588416,
+          "doc_count": 4
+        },
+        {
+          "key": 242982932480,
+          "doc_count": 4
+        },
+        {
+          "key": 242982998016,
+          "doc_count": 4
+        },
+        {
+          "key": 242983084032,
+          "doc_count": 4
+        },
+        {
+          "key": 242983186432,
+          "doc_count": 4
+        },
+        {
+          "key": 242983239680,
+          "doc_count": 4
+        },
+        {
+          "key": 242983399424,
+          "doc_count": 4
+        },
+        {
+          "key": 242983456768,
+          "doc_count": 4
+        },
+        {
+          "key": 242983489536,
+          "doc_count": 4
+        },
+        {
+          "key": 242983604224,
+          "doc_count": 4
+        },
+        {
+          "key": 242983706624,
+          "doc_count": 4
+        }
+      ]
+    }
+  }
+}
+
+Statistics:
+Query Duration	5ms
+Request Duration	510ms
+Hits	3435
+Index	"topbeat-*"
