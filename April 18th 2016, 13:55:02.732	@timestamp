@@ -1,0 +1,32 @@
+April 18th 2016, 13:55:02.732	@timestamp:
+April 18th 2016, 13:55:02.732 beat.hostname:CHINMAYAMAR6824 
+beat.name:CHINMAYAMAR6824 count:1 proc.cmdline:"C:\Windows\system32\wwahost.exe" -ServerName:AppexSports.wwa proc.cpu.user:7,421 proc.cpu.user_p:0 proc.cpu.system:3,703 
+proc.cpu.total:11,124 proc.cpu.start_time:Sep28 proc.mem.size:146,386,944 proc.mem.rss:207,036,416 proc.mem.rss_p:0.05 proc.mem.share:0 proc.name:WWAHost.exe 
+proc.pid:3,124 proc.ppid:0 proc.state:running proc.username:CHINMAYAMAR6824\Chinmaya type:process _id:AVQoeQ_Xuu2UiKYxl2QC _type:process _index:topbeat-2016.04.18 _score:
+Link to /topbeat-2016.04.18/process/AVQoeQ_Xuu2UiKYxl2QC
+Table
+JSON
+@timestamp	  	April 18th 2016, 13:55:02.732
+t_id	  	AVQoeQ_Xuu2UiKYxl2QC
+t_index	  	topbeat-2016.04.18
+#_score	  	
+t_type	  	process
+tbeat.hostname	  	CHINMAYAMAR6824
+tbeat.name	  	CHINMAYAMAR6824
+#count	  	1
+tproc.cmdline	  	"C:\Windows\system32\wwahost.exe" -ServerName:AppexSports.wwa
+tproc.cpu.start_time	  	Sep28
+#proc.cpu.system	  	3,703
+#proc.cpu.total	  	11,124
+#proc.cpu.user	  	7,421
+#proc.cpu.user_p	  	0
+#proc.mem.rss	  	207,036,416
+#proc.mem.rss_p	  	0.05
+#proc.mem.share	  	0
+#proc.mem.size	  	146,386,944
+tproc.name	  	WWAHost.exe
+#proc.pid	  	3,124
+#proc.ppid	  	0
+tproc.state	  	running
+tproc.username	  	CHINMAYAMAR6824\Chinmaya
+ttype	  	process
