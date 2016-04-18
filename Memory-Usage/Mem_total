@@ -1,0 +1,75 @@
+Elasticsearch request body  
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "query_string": {
+          "analyze_wildcard": true,
+          "query": "*"
+        }
+      },
+      "filter": {
+        "bool": {
+          "must": [
+            {
+              "range": {
+                "@timestamp": {
+                  "gte": 1460965537426,
+                  "lte": 1460966437426,
+                  "format": "epoch_millis"
+                }
+              }
+            }
+          ],
+          "must_not": []
+        }
+      }
+    }
+  },
+  "size": 0,
+  "aggs": {
+    "3": {
+      "terms": {
+        "field": "mem.total",
+        "size": 20,
+        "order": {
+          "_count": "desc"
+        }
+      }
+    }
+  }
+}
+
+Elasticsearch response body  
+{
+  "took": 3,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "failed": 0
+  },
+  "hits": {
+    "total": 3368,
+    "max_score": 0,
+    "hits": []
+  },
+  "aggregations": {
+    "3": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": 4294488064,
+          "doc_count": 90
+        }
+      ]
+    }
+  }
+}
+
+Statistics:
+Query Duration	3ms
+Request Duration	544ms
+Hits	3368
+Index	"topbeat-*"
