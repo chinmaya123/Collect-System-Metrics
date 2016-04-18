@@ -68,7 +68,7 @@ Elasticsearch response body
   }
 }
 
-Statics:
+Statistics:
 
 Query Duration	8ms
 Request Duration	640ms
