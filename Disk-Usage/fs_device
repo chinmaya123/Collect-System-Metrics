@@ -1,0 +1,99 @@
+Elasticsearch request body  
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "query_string": {
+          "analyze_wildcard": true,
+          "query": "*"
+        }
+      },
+      "filter": {
+        "bool": {
+          "must": [
+            {
+              "range": {
+                "@timestamp": {
+                  "gte": 1460966214395,
+                  "lte": 1460967114396,
+                  "format": "epoch_millis"
+                }
+              }
+            }
+          ],
+          "must_not": []
+        }
+      }
+    }
+  },
+  "size": 0,
+  "aggs": {
+    "3": {
+      "terms": {
+        "field": "fs.device_name",
+        "size": 20,
+        "order": {
+          "_count": "desc"
+        }
+      }
+    }
+  }
+}
+
+Elasticsearch response body  
+{
+  "took": 16,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "failed": 0
+  },
+  "hits": {
+    "total": 3423,
+    "max_score": 0,
+    "hits": []
+  },
+  "aggregations": {
+    "3": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "a",
+          "doc_count": 90
+        },
+        {
+          "key": "d",
+          "doc_count": 90
+        },
+        {
+          "key": "w",
+          "doc_count": 90
+        },
+        {
+          "key": "x",
+          "doc_count": 90
+        },
+        {
+          "key": "y",
+          "doc_count": 90
+        },
+        {
+          "key": "z",
+          "doc_count": 90
+        },
+        {
+          "key": "c",
+          "doc_count": 89
+        }
+      ]
+    }
+  }
+}
+
+Statistics:
+Query Duration	16ms
+Request Duration	621ms
+Hits	3423
+Index	"topbeat-*"
